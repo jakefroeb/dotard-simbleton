@@ -1,8 +1,9 @@
 import {BusinessList} from "./BusinessList.js"
-BusinessList();
+//BusinessList();
 import {NewYorkBusinessList} from "./BusinessList.js"
-NewYorkBusinessList();
+//NewYorkBusinessList();
 import {ManufacturingBusinessList} from "./BusinessList.js"
-ManufacturingBusinessList();
+//ManufacturingBusinessList();
 import {AgentList} from "./AgentList.js"
-AgentList();
+//AgentList();
+
