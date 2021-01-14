@@ -133,3 +133,14 @@ const manufacturingBusinesses = businesses.filter(businessObject => {
 export const getManufacturingBusinesses = () => {
     return manufacturingBusinesses.slice()
 }
+
+const purchasingAgents = businesses.map(businessObject => {
+    return {
+        fullname : `${businessObject.purchasingAgent.nameFirst} ${businessObject.purchasingAgent.nameLast}`,
+        company : businessObject.companyName,
+        phoneNumber : businessObject.phoneWork
+    }
+})
+export const getPurchasingAgents = () => {
+    return purchasingAgents.slice()
+}
