@@ -113,3 +113,23 @@ const businesses = [
   export const useBusinesses = () => {
     return businesses.slice()
 }
+const newYorkBusinesses =  businesses.filter(businessObject => {
+        if (businessObject.addressStateCode === "NY") {
+            return true
+        }
+        return false
+    })
+export const getNewYorkBusinesses = () => {
+    return newYorkBusinesses.slice();
+}
+
+
+const manufacturingBusinesses = businesses.filter(businessObject => {
+        if (businessObject.companyIndustry === "Manufacturing") {
+            return true
+        }
+            return false
+    })
+export const getManufacturingBusinesses = () => {
+    return manufacturingBusinesses.slice()
+}

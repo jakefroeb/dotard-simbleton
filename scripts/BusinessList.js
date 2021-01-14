@@ -1,4 +1,4 @@
-import { useBusinesses } from "./BusinessProvider.js"
+import { getManufacturingBusinesses, getNewYorkBusinesses, useBusinesses } from "./BusinessProvider.js"
 import { Business } from "./Business.js"
 
 const contentTarget = document.querySelector(".businesses")
@@ -17,16 +17,8 @@ export const BusinessList = () => {
 
 const newYorkContentTarget = document.querySelector(".businessList--newYork")
 export const NewYorkBusinessList = () => {
-    const businessArray = useBusinesses()
+    const newYorkBusinessArray = getNewYorkBusinesses()
     newYorkContentTarget.innerHTML = "<h1>New York Businesses</h1>"
-
-    const newYorkBusinessArray = businessArray.filter(businessObject => {
-        if (businessObject.addressStateCode === "NY") {
-            return true
-        }
-        return false
-    })
-
     newYorkBusinessArray.forEach(
         (businessObject) => {
             newYorkContentTarget.innerHTML += Business(businessObject)
@@ -37,16 +29,8 @@ export const NewYorkBusinessList = () => {
 
 const manufacturingContentTarget = document.querySelector(".businessList--manufacturing")
 export const ManufacturingBusinessList = () => {
-    const businessArray = useBusinesses()
+    const manufacturingBusinessArray = getManufacturingBusinesses()
     manufacturingContentTarget.innerHTML = "<h1>Manufacturing Businesses</h1>"
-
-    const manufacturingBusinessArray = businessArray.filter(businessObject => {
-        if (businessObject.companyIndustry === "Manufacturing") {
-            return true
-        }
-        return false
-    })
-
     manufacturingBusinessArray.forEach(
         (businessObject) => {
             manufacturingContentTarget.innerHTML += Business(businessObject)
